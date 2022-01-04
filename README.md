@@ -4,7 +4,7 @@ This tutorial will go through on how to configure your own private keys and add 
 ## What is this?
 This tutorial aims to facilitate the creation of your own private keys and certificates to sign efi binaries and kernels in order to have secure boot enabled on the machine, booting those binaries with your keys, but still retain the ability to boot microsoft windows with tthe MS keys already provisioned on the machine by defualt..
 
-This tutorial is a balant rip off Sakaki's fantastic tutorial "Sakaki's EFI Install Guide" (https://wiki.gentoo.org/wiki/User:Sakaki/Sakaki%27s_EFI_Install_Guide)
+This tutorial is a balant rip off Sakaki's fantastic tutorial ["Sakaki's EFI Install Guide"](https://wiki.gentoo.org/wiki/User:Sakaki/Sakaki%27s_EFI_Install_Guide)
 
 ## What does this tutorial assume?
 - you are doing this in linux release that does not rely on shim and mok manager
