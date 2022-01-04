@@ -86,7 +86,7 @@ This is it.
 ## Acknowledgements
 Thanks to:
 - Томми on discord for hearing my rumbles and frustrations with secure boot on shim based OS.
-- Sakaki's awesome guide that goes extremely in depth on the creation of the keys (way more in depth than this guide)
+- [Sakaki's awesome guide](https://wiki.gentoo.org/wiki/User:Sakaki/Sakaki%27s_EFI_Install_Guide) that goes extremely in depth on the creation of the keys (way more in depth than this guide)
 
 ## Bugs
 I have tested the above procedure in a arch VM on qemu and everything works as expected, however on live hardware (DELL XPS 13 9360) somehow secure boot validates the bootloader (GRUB) but fails to validate the kernel, so it is actually able to launch an unsigned kernel.
