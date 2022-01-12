@@ -88,7 +88,7 @@ Fixing GRUB 2.06, GRUB 2.06 requires all modules to be bundled on the same image
 - sbsign --key /etc/efikeys/db.key --cert /etc/efikeys/db.crt --output /boot/efi/EFI/grub/grubx64.efi /boot/efi/EFI/grub/grubx64.efi;
 - Enable secure boot;
 
-hooking pacman signing:
+Hooking pacman signing:
 - cp /usr/share/libalpm/hooks/90-mkinitcpio-install.hook /etc/pacman.d/hooks/90-mkinitcpio-install.hook 
 - cp /usr/share/libalpm/scripts/mkinitcpio-install /usr/local/share/libalpm/scripts/mkinitcpio-install
 
