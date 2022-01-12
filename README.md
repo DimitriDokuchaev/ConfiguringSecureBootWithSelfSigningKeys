@@ -93,12 +93,12 @@ Hooking pacman signing:
 - cp /usr/share/libalpm/scripts/mkinitcpio-install /usr/local/share/libalpm/scripts/mkinitcpio-install
 
 In /etc/pacman.d/hooks/90-mkinitcpio-install.hook
- replace Exec = /usr/share/libalpm/scripts/mkinitcpio-install
- with Exec = /usr/local/share/libalpm/scripts/mkinitcpio-install
+- replace Exec = /usr/share/libalpm/scripts/mkinitcpio-install
+- with Exec = /usr/local/share/libalpm/scripts/mkinitcpio-install
 
 In /usr/local/share/libalpm/scripts/mkinitcpio-install
- replace install -Dm644 "${line}" "/boot/vmlinuz-${pkgbase}"
- with sbsign --key /path/to/db.key --cert /path/to/db.crt --output "/boot/vmlinuz-${pkgbase}" "${line}"
+- replace install -Dm644 "${line}" "/boot/vmlinuz-${pkgbase}"
+- with sbsign --key /path/to/db.key --cert /path/to/db.crt --output "/boot/vmlinuz-${pkgbase}" "${line}"
 
 This will sign kernels automatically when they are installed, this is it.
 
