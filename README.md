@@ -13,7 +13,7 @@ This tutorial is a balant rip off Sakaki's fantastic tutorial ["Sakaki's EFI Ins
 
 ## The turotial
 
-- pacman -S efitools
+- pacman -S efitools sbsigntools
 - mkdir -p -v /etc/efikeys
 - chmod -v 700 /etc/efikeys
 - cd /etc/efikeys
