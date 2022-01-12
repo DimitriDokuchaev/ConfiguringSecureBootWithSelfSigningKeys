@@ -11,7 +11,7 @@ This tutorial is a balant rip off Sakaki's fantastic tutorial ["Sakaki's EFI Ins
 - this has been attempted successfuly in gentoo and arch
 - I have never got this to work on ubuntu or debian (both rely on shim64.efi)
 
-## The turotial
+## The tutorial
 
 - pacman -S efitools sbsigntools
 - mkdir -p -v /etc/efikeys
