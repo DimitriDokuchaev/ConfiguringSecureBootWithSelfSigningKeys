@@ -82,6 +82,9 @@ Now that everytthing is done we should now be able to sign both the kernel and t
 - sbsign --key /etc/efikeys/db.key --cert /etc/efikeys/db.crt --output /boot/vmlinuz-linux /boot/vmlinuz-linux
 - sbsign --key /etc/efikeys/db.key --cert /etc/efikeys/db.crt --output /boot/efi/EFI/grub/grubx64.efi /boot/efi/EFI/grub/grubx64.efi
 
+
+Fixing GRUB 2.06, GRUB 2.06 requires all modules to be bundled on the same image, you cant sign the modules manually, so first thing is build a grub image with all modules needed bundled together:
+
 This is it.
 
 ## Acknowledgements
