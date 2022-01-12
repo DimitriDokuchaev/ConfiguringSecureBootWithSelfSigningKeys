@@ -84,8 +84,23 @@ Now that everytthing is done we should now be able to sign both the kernel and t
 
 
 Fixing GRUB 2.06, GRUB 2.06 requires all modules to be bundled on the same image, you cant sign the modules manually, so first thing is build a grub image with all modules needed bundled together:
+- grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=GRUB --modules="normal test efi_gopefi_uga search echo linux all_video gfxmenu gfxterm_background gfxterm_menu gfxterm png jpeg part_msdos loadenv luks2 tpm" --disable-shim-lock;
+- sbsign --key /etc/efikeys/db.key --cert /etc/efikeys/db.crt --output /boot/efi/EFI/grub/grubx64.efi /boot/efi/EFI/grub/grubx64.efi;
+- Enable secure boot;
 
-This is it.
+hooking pacman signing:
+- cp /usr/share/libalpm/hooks/90-mkinitcpio-install.hook /etc/pacman.d/hooks/90-mkinitcpio-install.hook 
+- cp /usr/share/libalpm/scripts/mkinitcpio-install /usr/local/share/libalpm/scripts/mkinitcpio-install
+
+In /etc/pacman.d/hooks/90-mkinitcpio-install.hook
+replace Exec = /usr/share/libalpm/scripts/mkinitcpio-install
+with Exec = /usr/local/share/libalpm/scripts/mkinitcpio-install
+
+In /usr/local/share/libalpm/scripts/mkinitcpio-install
+replace install -Dm644 "${line}" "/boot/vmlinuz-${pkgbase}"
+with sbsign --key /path/to/db.key --cert /path/to/db.crt --output "/boot/vmlinuz-${pkgbase}" "${line}"
+
+This will sign kernels automatically when they are installed, this is it.
 
 ## Acknowledgements
 Thanks to:
